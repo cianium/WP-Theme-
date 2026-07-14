@@ -1,0 +1,27 @@
+/*
+Theme Name: Salon Barbers
+Theme URI: https://example.com
+Author: Kian Khayat
+Author URI: https://kiankhayat.me
+Description: قالب اختصاصی وردپرس برای آرایشگاه/سالن زیبایی با فروشگاه محصولات (ووکامرس)، نمایش نمونه‌کار و رزرو نوبت آنلاین با پرداخت و اطلاع‌رسانی پیامکی. راست‌چین و فارسی.
+Version: 1.0.0
+Requires at least: 6.4
+Requires PHP: 8.0
+Tested up to: 6.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: salon-barbers
+Tags: custom-menu, featured-images, rtl-language-support, translation-ready, e-commerce, full-width-template
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned.
+
+Salon Barbers is based on Underscores https://underscores.me/, (C) 2012-2024 Automattic, Inc.
+*/
+
+/*
+This file is intentionally minimal. WordPress requires it for theme
+identification, but all real styling lives in assets/css/style.css,
+which is loaded through wp_enqueue_style() in inc/enqueue.php so it
+benefits from proper caching and dependency management.
+*/

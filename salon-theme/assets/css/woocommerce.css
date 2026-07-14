@@ -1,0 +1,134 @@
+/**
+ * WooCommerce visual overrides.
+ *
+ * Deliberately does not override WooCommerce's PHP templates — only
+ * restyles the class names it already outputs (ul.products, .price,
+ * .single_add_to_cart_button, etc.), so the theme stays compatible
+ * with WooCommerce core updates instead of shipping stale copies of
+ * its templates.
+ */
+
+.woocommerce-page-wrap {
+	padding-block: var(--space-5);
+}
+
+.woocommerce ul.products {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: var(--space-3);
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.woocommerce ul.products li.product {
+	background: #fff;
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius-md);
+	padding: var(--space-2);
+	box-shadow: var(--shadow-card);
+}
+
+.woocommerce ul.products li.product img {
+	border-radius: var(--radius-sm);
+	aspect-ratio: 1;
+	object-fit: cover;
+	margin-bottom: var(--space-1);
+}
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title {
+	font-size: 1rem;
+	font-weight: 700;
+	margin: 0.4em 0 0.2em;
+}
+
+.woocommerce span.onsale {
+	background: var(--color-rust);
+	color: var(--color-ivory);
+	border-radius: 999px;
+	font-weight: 700;
+	font-size: 0.75rem;
+	min-height: auto;
+	min-width: auto;
+	padding: 0.3em 0.8em;
+	line-height: 1;
+	top: 0.6em;
+	inset-inline-start: 0.6em;
+	right: auto;
+}
+
+.woocommerce .price {
+	color: var(--color-brass-dark);
+	font-weight: 700;
+}
+
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce #respond input#submit,
+.woocommerce input.button,
+.woocommerce .single_add_to_cart_button {
+	background: var(--color-brass);
+	color: var(--color-ink);
+	border: none;
+	border-radius: var(--radius-sm);
+	font-weight: 700;
+	padding: 0.75em 1.5em;
+}
+
+.woocommerce a.button:hover,
+.woocommerce button.button:hover,
+.woocommerce .single_add_to_cart_button:hover {
+	background: var(--color-brass-dark);
+	color: var(--color-ivory);
+}
+
+.woocommerce div.product .woocommerce-product-gallery {
+	border-radius: var(--radius-md);
+	overflow: hidden;
+}
+
+.woocommerce div.product form.cart {
+	margin-top: var(--space-3);
+}
+
+.woocommerce table.shop_table {
+	border-radius: var(--radius-md);
+	border: 1px solid var(--color-line);
+	overflow: hidden;
+}
+
+.woocommerce table.shop_table th {
+	background: var(--color-ivory);
+}
+
+.woocommerce form .form-row input.input-text,
+.woocommerce form .form-row textarea,
+.woocommerce-checkout select {
+	border: 1px solid var(--color-line);
+	border-radius: var(--radius-sm);
+	padding: 0.75em 1em;
+	background: #fff;
+}
+
+.woocommerce-checkout #payment {
+	background: var(--color-ivory);
+	border-radius: var(--radius-md);
+}
+
+.woocommerce-message,
+.woocommerce-info {
+	border-top-color: var(--color-brass);
+}
+
+.woocommerce-message::before,
+.woocommerce-info::before {
+	color: var(--color-brass-dark);
+}
+
+.woocommerce-error {
+	border-top-color: var(--color-rust);
+}
+
+.woocommerce-error::before {
+	color: var(--color-rust);
+}

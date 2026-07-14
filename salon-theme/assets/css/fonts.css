@@ -1,0 +1,14 @@
+/**
+ * Vazirmatn covers Persian + Latin glyphs across the full 100–900
+ * weight range, so it carries the entire type scale on its own rather
+ * than pairing a Latin display face with a Persian body face — a
+ * pairing that rarely reads as intentional in RTL layouts.
+ *
+ * Loaded from Google Fonts for simplicity. For production, self-host
+ * it instead (download the variable .woff2 from
+ * https://github.com/rastikerdar/vazirmatn/releases, put it in
+ * assets/fonts/, and replace this @import with a local @font-face) —
+ * that avoids a third-party request and is friendlier to Iranian
+ * visitors whose connection to Google's CDN can be unreliable.
+ */
+@import url( 'https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100..900&display=swap' );
