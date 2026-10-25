@@ -23,7 +23,7 @@ This repository contains `salon-theme/`, an RTL barbershop/salon theme with page
 3. Follow the theme README for required plugins and configuration.
 4. Test booking collisions, checkout completion, SMS callbacks, access permissions and mobile RTL behavior before real use.
 
-**Important:** the repository's existing `.github/workflows/laravel.yml` is a Laravel workflow and is **not a valid quality gate for this WordPress theme**; its last run failed. Replace it with PHP syntax checks, WordPress coding standards and WordPress-specific tests.
+**CI:** the incorrect Laravel workflow has been replaced with `.github/workflows/wordpress-ci.yml`. This now validates required theme files and checks PHP syntax. WordPress, WooCommerce, booking and payment integration tests remain to be added.
 
 ## Payments and privacy
 
