@@ -1,7 +1,7 @@
 <?php
 /**
  * Small, reusable display helpers so templates stay readable and don't
- * repeat esc_*/get_theme_mod boilerplate.
+ * repeat escaping and get_theme_mod boilerplate.
  *
  * @package Salon_Barbers
  */
