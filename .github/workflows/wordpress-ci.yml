@@ -1,0 +1,42 @@
+name: WordPress Theme CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+concurrency:
+  group: wp-theme-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  php-syntax:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          coverage: none
+      - name: Validate WordPress theme files
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f salon-theme/style.css
+          test -f salon-theme/functions.php
+          test -f salon-theme/index.php
+          grep -Eqi 'Theme Name:' salon-theme/style.css
+      - name: Lint all PHP files
+        shell: bash
+        run: |
+          set -euo pipefail
+          mapfile -d '' php_files < <(find salon-theme -type f -name '*.php' -print0)
+          if [ ${#php_files[@]} -eq 0 ]; then
+            echo 'No PHP files found'
+            exit 1
+          fi
+          for file in "${php_files[@]}"; do
+            php -l "$file"
+          done
+      - name: Explain validation scope
+        run: echo 'Static PHP syntax only; WordPress and WooCommerce runtime integration remains unverified.'
